@@ -19,7 +19,7 @@ Hyperbolic space, instead, grows exponentially, and therefore it can easily acco
 This fork introduces several key additions to the original repository:
 
 * **New Dataset**: A custom Knowledge Graph that integrates patient phenotypes with molecular ontologies. The datasets can be found raw under `raw_data/edges_filtered.csv` and `raw_data/nodes_filtered.csv`. The graph was created using PheKnowLator [[12]](#ref12), described in the report, and patient data contained in the 0.1.21 v. cohort of GA4GH Phenopackets [[13]](#ref13) that represent individuals with Mendelian diseases. Code of graph creation can be found here [PatientKG creation](https://github.com/LuciaMellini/PatientKG). Additionally, the notebook `KG_v10_&_v12.ipynb` shows how the graph has been pre-processed to become a valid dataset for this framework.
-* **Hybrid Model (`AttEH`)**: A novel mixture model that combines Euclidean and Hyperbolic geometries to better represent the mixed-domain nature of the biomedical KG. The implementation can be found in `KGEmb/models/mixture.py`. 
+* **Hybrid Model (`AttEH`)**: A novel mixture model that combines Euclidean and Hyperbolic distances and biases trough learned mixture gates. The implementation can be found in `KGEmb/models/mixture.py`. 
 * **Disease-Only MRR**: A new evaluation metric that calculates the Mean Reciprocal Rank (MRR) considering only disease entities as potential candidates. This is implemented through a `disease_mask` found in:
     * **Model layer** (`KGEmb/models/`): Each base class (`BaseE`, `BaseC`, `BaseH`, and `AttEH`) accepts `disease_ids` and a `restrict_to_diseases` flag, and registers a boolean `disease_mask` buffer. During evaluation, `get_ranking()` in `KGEmb/models/base.py` uses this mask to set non-disease scores to `-1e6`, effectively restricting the ranking to disease entities only.
     * **Metrics layer** (`KGEmb/metrics/ancestorsMRR.py`): The same mask is applied when computing the ancestor-weighted MRR, ensuring consistency between standard and hierarchy-aware evaluation.
@@ -64,7 +64,18 @@ python KGEmb/datsets/process.py #if dataset has a valid set
 python KGEmb/datsets/process.py --no_valid #if dataset has no valid set
 
 ```
-### 3.2. Training a Model
+
+Additionally, you have to manually update the available datasets specified in `run.py` args:
+
+```python
+parser.add_argument(
+    "--dataset", default="WN18RR",
+    choices=["FB15K", "WN", "WN18RR", "FB237", "YAGO3-10", 
+    "add_new_dataset_here"], #dataset name = folder name
+    help="Knowledge Graph dataset"
+)
+```
+### 3.3. Training a Model
 
 To train a model, use the `run.py` script. For example, to train the new `AttEH` model:
 
@@ -82,7 +93,7 @@ python KGEmb/run.py \
 
 ```
 
-### 3.3. Testing a Model
+### 3.4. Testing a Model
 
 To test a trained model, use the `test.py` script. The `--all` flag runs a comprehensive evaluation:
 
@@ -100,7 +111,7 @@ python KGEmb/test.py \
 ### 4.1. Training Arguments (`run.py`)
 
 ```
-usage: run.py [-h] [--dataset {FB15K,WN,WN18RR,FB237,YAGO3-10,KG_ALL,KG_PD,KG_GO,KG_F,KG_F_HasD_noV,KG_F_HasD_V,KG_filtered_v8,KG_filtered_v9,KG_filtered_v10,KG_filtered_v11,KG_filtered_v12,KG_filtered_v13}]
+usage: run.py [-h] [--dataset {FB15K,WN,WN18RR,FB237,YAGO3-10}]
               [--model {TransE,CP,MurE,RotE,RefE,AttE,RotH,RefH,AttH,ComplEx,RotatE,AttEH}]
               [--regularizer {N3,F2}] [--reg REG]
               [--optimizer {Adagrad,Adam,SparseAdam}]
