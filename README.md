@@ -97,7 +97,10 @@ python KGEmb/run.py \
 
 To test a trained model, use the `test.py` script. The `--all` flag runs a comprehensive evaluation:
 
-* including splits by disease frequency and the official MONDO rare disease subset.
+- on the full test set (metrics average between normal and inverse relations)
+- on the full test set (metrics do not count inverse reations)
+- *(for custom test sets, like the one to simulate differential diagnosis, which contains only `Person --> Has Disease --> Disease` triples)* on two subsets of the custom test set, one containing triples with frequent diseases and the other conatining triples with non-frequent diseases. 
+- *(for custom test sets, like the one to simulate differential diagnosis, which contains only `Person --> Has Disease --> Disease` triples)* on two subsets of the custom test set, one containing triples with diseases officially labeled as rare and the other conatining triples with diseases oficially labeled as non-rare.
 
 ```bash
 python KGEmb/test.py \
