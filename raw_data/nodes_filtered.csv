@@ -1,0 +1,15 @@
+name,typename
+<http://purl.obolibrary.org/obo/PR_Q9H425>,Protein
+<http://purl.obolibrary.org/obo/PR_000043907>,Protein
+<http://purl.obolibrary.org/obo/PR_000004250>,Protein
+<http://www.ncbi.nlm.nih.gov/gene/1837>,Gene
+<http://purl.obolibrary.org/obo/GO_0046392>,GO
+<http://purl.obolibrary.org/obo/PR_O75110>,Protein
+<http://purl.obolibrary.org/obo/GO_0045855>,GO
+<http://purl.obolibrary.org/obo/PR_000042077>,Protein
+<http://purl.obolibrary.org/obo/GO_0009293>,GO
+<http://purl.obolibrary.org/obo/GO_0005899>,GO
+<http://purl.obolibrary.org/obo/PR_P12814>,Protein
+<http://purl.obolibrary.org/obo/HP_0025537>,Phenotype
+<http://purl.obolibrary.org/obo/MONDO_0019180>,Disease
+<http://purl.obolibrary.org/obo/PR_000068129>,Protein

@@ -1,0 +1,15 @@
+subject,predicate,object
+<http://purl.obolibrary.org/obo/HP_0003392>,Phenotype of,<http://purl.obolibrary.org/obo/MONDO_0011091>
+<http://purl.obolibrary.org/obo/HP_0001328>,Phenotype of,<http://purl.obolibrary.org/obo/MONDO_0003803>
+<http://purl.obolibrary.org/obo/PR_P0CG47>,Molecularly interacts with,<http://purl.obolibrary.org/obo/PR_O43684>
+<http://purl.obolibrary.org/obo/MONDO_0021154>,Subclassof,<http://purl.obolibrary.org/obo/MONDO_0005093>
+<http://purl.obolibrary.org/obo/GO_0042803>,Function of,<http://purl.obolibrary.org/obo/PR_Q96CF2>
+<http://www.ncbi.nlm.nih.gov/gene/1949>,Subclassof,<http://purl.obolibrary.org/obo/SO_0001217>
+<http://purl.obolibrary.org/obo/GO_0090038>,Subclassof,<http://purl.obolibrary.org/obo/GO_1902532>
+<http://purl.obolibrary.org/obo/HP_0000602>,Phenotype of,<http://purl.obolibrary.org/obo/MONDO_0011945>
+<http://purl.obolibrary.org/obo/PR_Q13231>,Molecularly interacts with,<http://purl.obolibrary.org/obo/PR_P14780>
+<http://purl.obolibrary.org/obo/PR_Q9C026>,Molecularly interacts with,<http://purl.obolibrary.org/obo/PR_Q9BSL1>
+<http://www.ncbi.nlm.nih.gov/gene/284837>,Subclassof,<http://purl.obolibrary.org/obo/SO_0002127>
+<http://purl.obolibrary.org/obo/PR_P49281>,Located in,<http://purl.obolibrary.org/obo/GO_0005886>
+<http://purl.obolibrary.org/obo/HP_0010841>,Phenotype of,<http://purl.obolibrary.org/obo/MONDO_0024556>
+<http://purl.obolibrary.org/obo/PR_P63218>,Molecularly interacts with,<http://purl.obolibrary.org/obo/PR_Q92806>
