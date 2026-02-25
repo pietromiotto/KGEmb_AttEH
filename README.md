@@ -1,7 +1,7 @@
 
 # Hyperbolic and Euclidean Mixture Knowledge Graph Embedding for Rare Disease Diagnosis (Fork)
 
-This repository is a fork of the original [Hyperbolic Knowledge Graph Embedding](https://github.com/HazyResearch/KGEmb) implementation, extending it to simulate in-silico differential diagnosis of rare Mendelian diseases.
+This repository is a fork of the original [KGEmb](https://github.com/HazyResearch/KGEmb) implementation, extending it to simulate in-silico differential diagnosis of rare Mendelian diseases.
 
 ## 1. Research Objectives and Motivations
 
